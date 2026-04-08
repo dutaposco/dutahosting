@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* =============================================
-   GLOBAL DESIGN SYSTEM - HostCrafter
+   GLOBAL DESIGN SYSTEM - DutaHosting
    ============================================= */
 
 *, *::before, *::after {
@@ -35,8 +35,8 @@
   --font-body: 'Inter', sans-serif;
 
   /* Shadows */
-  --shadow-card: 0 2px 12px rgba(37, 99, 235, 0.08);
-  --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 10px 30px rgba(37, 99, 235, 0.2);
   
   /* Transitions */
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -108,7 +108,7 @@ body {
   justify-content: center;
   gap: 0.6rem;
   padding: 0.75rem 1.75rem;
-  border-radius: 12px;
+  border-radius: 100px;
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
@@ -120,23 +120,25 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: var(--clr-accent);
   color: #fff;
-  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.2);
+  box-shadow: none;
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.3);
+  background: #1d4ed8;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 .btn-outline {
-  border: 1px solid var(--clr-border);
-  background: var(--clr-surface);
+  border: 2px solid var(--clr-accent);
+  background: transparent;
+  color: var(--clr-accent);
 }
 .btn-outline:hover {
   border-color: var(--clr-accent);
   background: var(--clr-accent-dim);
-  color: #fff;
+  color: var(--clr-accent);
   transform: translateY(-2px);
 }
 
@@ -164,8 +166,12 @@ body {
 .card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+  top: 0; left: 0; right: 0; height: 3px;
+  background: transparent;
+}
+
+.card:hover::before {
+  background: var(--clr-accent);
 }
 
 .card:hover {
