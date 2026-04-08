@@ -19,15 +19,15 @@ export default function Domains() {
   const handleSearch = (e) => {
     e.preventDefault()
     if (!query) return
-    
+
     setIsSearching(true)
     setResults(null)
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsSearching(false)
       const baseName = query.split('.')[0].toLowerCase()
-      
+
       setResults(
         tlds.map(tld => ({
           domain: `${baseName}${tld.ext}`,
@@ -42,7 +42,7 @@ export default function Domains() {
   return (
     <div className="page pb-20 pt-32 relative">
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Header Section */}
         <div className="text-center mb-16 animate-fadeInUp">
           <Globe size={48} className="text-accent mx-auto mb-6 drop-shadow-lg" />
@@ -59,14 +59,14 @@ export default function Domains() {
               <div className="pl-4 flex items-center justify-center text-muted">
                 <Search size={24} />
               </div>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Cari nama domain impian Anda..." 
+                placeholder="Cari nama domain impian Anda..."
                 className="w-full bg-transparent text-lg text-slate-900 px-4 py-4 focus:outline-none"
               />
-              <button 
+              <button
                 type="submit"
                 className="bg-accent hover:bg-blue-400 text-white px-8 py-4 rounded-lg font-bold font-heading transition-colors whitespace-nowrap"
               >
@@ -105,7 +105,7 @@ export default function Domains() {
           <h3 className="font-heading font-bold text-2xl text-slate-900 mb-6 text-center">Saran Domain Populer</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'namakamu.com', price: 'Rp 149.000' },
+              { name: 'nama.com', price: 'Rp 149.000' },
               { name: 'bisnisku.net', price: 'Rp 195.000' },
               { name: 'startup.io', price: 'Rp 599.000' },
               { name: 'tech.co', price: 'Rp 375.000' },
@@ -164,7 +164,7 @@ export default function Domains() {
                       </p>
                     </div>
                   </div>
-                  
+
                   {result.available ? (
                     <div className="flex items-center gap-6">
                       <p className="font-black text-xl text-slate-900">{result.price}<span className="text-sm font-medium text-soft font-body">/thn</span></p>
